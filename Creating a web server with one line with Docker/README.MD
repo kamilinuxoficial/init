@@ -1,5 +1,5 @@
 # RUN NGINX IN ONE LINE
-``docker run -d -p 80:80 nginx``
+<code>docker run -d -p 80:80 nginx<code>
 # FROM DOCKERFILE
 ``#docker build .
 Sending build context to Docker daemon  4.096kB
