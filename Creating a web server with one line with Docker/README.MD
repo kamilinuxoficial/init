@@ -2,7 +2,8 @@
 <code> docker run -d -p 80:80 nginx <code>
  
 # FROM DOCKERFILE
-``#docker build .
+``
+#docker build .
 Sending build context to Docker daemon  4.096kB
 Step 1/3 : FROM nginx:latest
  ---> 5d58c024174d
@@ -14,9 +15,12 @@ Step 3/3 : COPY ./index.html /usr/share/nginx/html
  ---> 86daeef503ce
 Successfully built 86daeef503ce
 ``
-``docker images
+``
+#docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 <none>       <none>    86daeef503ce   25 hours ago   196MB
 ``
 
-``docker run -d -p 80:80 [IMAGE ID]``
+``
+#docker run -d -p 80:80 [IMAGE ID]
+``
