@@ -16,7 +16,29 @@ Removing intermediate container 9e41b669666d
 Successfully built dbbf5fef11c2
 Successfully tagged python-ddos:latest
 ```
-
+# prueba de esfuerzo en el servidor
 ```
 #docker run -d python-ddos
+```
+# instalamos Apache Benchmarck para stresar el servidor
+```
+apt install apache2-utils gnuplot
+```
+# lanzamos el contenedor
+```
+sudo docker run -it --memory="6m" --cpus="0.1" -p 80:80 nginx
+```
+# ponemos las stats
+```
+docker stats
+```
+# lanzamos la prueba de stress
+-k Enable the HTTP KeepAlive feature
+-n (Number) of requests
+-c (Concurrency) Number of multiple requests to perform at a time
+-t (Timelimit) Maximum number of seconds to spend
+-r Don't exit on socket receive errors.
+-H custom-header
+```
+ab -k -n100000000 -c1000 -t 1000 -r -H 'Accept-Encoding: gzip,deflate' http://localhost/
 ```
